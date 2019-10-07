@@ -1,0 +1,400 @@
+fileFormatVersion: 2
+guid: a375fa77160357b4aa526fdd835ed7ce
+timeCreated: 1523300213
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Nochvay_Idle_Zombie_01_64x128_0
+    21300002: Nochvay_Idle_Zombie_01_64x128_1
+    21300004: Nochvay_Idle_Zombie_01_64x128_2
+    21300006: Nochvay_Idle_Zombie_01_64x128_3
+    21300008: Nochvay_Idle_Zombie_01_64x128_4
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Nochvay_Idle_Zombie_01_64x128_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 70
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: -20}
+        - {x: 8, y: -9}
+        - {x: 7, y: 0}
+        - {x: 8, y: 5}
+        - {x: 8, y: -10}
+        - {x: 13, y: -16}
+        - {x: 18, y: -16}
+        - {x: 23, y: -14}
+        - {x: 22, y: -10}
+        - {x: 20, y: -8}
+        - {x: 26, y: -7}
+        - {x: 15, y: 62}
+        - {x: -30, y: 62}
+        - {x: -35, y: 51}
+        - {x: -35, y: -57.931602}
+        - {x: -4.191036, y: -58.11653}
+        - {x: 9.721233, y: -57.916214}
+        - {x: 10.097923, y: -51.55086}
+        - {x: 35, y: -51.64408}
+        - {x: 13, y: -50}
+      - - {x: 14, y: -48}
+        - {x: 15, y: -50}
+        - {x: 18, y: -50}
+        - {x: 23, y: -48}
+        - {x: 23, y: -42}
+        - {x: 22, y: -40}
+        - {x: 18, y: -40}
+        - {x: 14, y: -42}
+      - - {x: 14, y: -33}
+        - {x: 16, y: -35}
+        - {x: 19, y: -34}
+        - {x: 19, y: -30}
+        - {x: 17, y: -28}
+        - {x: 14, y: -29}
+      - - {x: 9, y: -23}
+        - {x: 8, y: -25}
+        - {x: 8, y: -30}
+        - {x: 10, y: -31}
+        - {x: 12, y: -31}
+        - {x: 14, y: -30}
+        - {x: 14, y: -23}
+      - - {x: 14, y: -24}
+        - {x: 16, y: -26}
+        - {x: 19, y: -25}
+        - {x: 19, y: -20}
+        - {x: 17, y: -18}
+        - {x: 14, y: -19}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Nochvay_Idle_Zombie_01_64x128_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 0
+        width: 70
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -22, y: 62}
+        - {x: -31, y: 59}
+        - {x: -34, y: 38}
+        - {x: -34, y: -59}
+        - {x: -10.621231, y: -58.03538}
+        - {x: 8.28566, y: -58.20285}
+        - {x: 9.348923, y: -53.17876}
+        - {x: 35, y: -51.398083}
+        - {x: 35, y: -58.03538}
+        - {x: 35, y: -8}
+        - {x: 7, y: 62}
+      - - {x: 14, y: -48}
+        - {x: 15, y: -50}
+        - {x: 18, y: -50}
+        - {x: 23, y: -48}
+        - {x: 23, y: -42}
+        - {x: 22, y: -40}
+        - {x: 18, y: -40}
+        - {x: 14, y: -42}
+      - - {x: 14, y: -33}
+        - {x: 16, y: -35}
+        - {x: 19, y: -34}
+        - {x: 19, y: -25}
+        - {x: 17, y: -23}
+        - {x: 14, y: -24}
+      - - {x: 20, y: -13}
+        - {x: 21, y: -10}
+        - {x: 18, y: 3}
+        - {x: 13, y: 3}
+        - {x: 11, y: 2}
+        - {x: 8, y: -13}
+        - {x: 8, y: -15}
+        - {x: 13, y: -20}
+        - {x: 20, y: -20}
+        - {x: 22, y: -19}
+        - {x: 22, y: -15}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Nochvay_Idle_Zombie_01_64x128_2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 0
+        width: 70
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -15, y: 62}
+        - {x: -24, y: 57}
+        - {x: -32, y: 2}
+        - {x: -32, y: -57}
+        - {x: -30, y: -59}
+        - {x: -14, y: -61}
+        - {x: -4, y: -38}
+        - {x: -4, y: -22}
+        - {x: -3, y: -46}
+        - {x: -11, y: -53}
+        - {x: -11, y: -59}
+        - {x: -8, y: -62}
+        - {x: -0.26417542, y: -58.009277}
+        - {x: 9.079697, y: -58.034054}
+        - {x: 35, y: -14}
+        - {x: 18, y: 62}
+      - - {x: 15, y: -43}
+        - {x: 16, y: -45}
+        - {x: 19, y: -45}
+        - {x: 24, y: -43}
+        - {x: 24, y: -37}
+        - {x: 23, y: -35}
+        - {x: 19, y: -35}
+        - {x: 15, y: -37}
+      - - {x: 11, y: -32}
+        - {x: 9, y: -34}
+        - {x: 9, y: -38}
+        - {x: 11, y: -40}
+        - {x: 13, y: -40}
+        - {x: 15, y: -38}
+        - {x: 15, y: -34}
+        - {x: 13, y: -32}
+      - - {x: 10, y: -16}
+        - {x: 9, y: -18}
+        - {x: 9, y: -24}
+        - {x: 15, y: -33}
+        - {x: 17, y: -35}
+        - {x: 21, y: -34}
+        - {x: 23, y: -26}
+        - {x: 23, y: -18}
+        - {x: 21, y: -16}
+      - - {x: 10, y: -2}
+        - {x: 10, y: -14}
+        - {x: 14, y: -16}
+        - {x: 17, y: -16}
+        - {x: 18, y: -14}
+        - {x: 18, y: -7}
+        - {x: 15, y: -2}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Nochvay_Idle_Zombie_01_64x128_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 0
+        width: 70
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 10, y: -43}
+        - {x: 7, y: 0}
+        - {x: 8, y: -10}
+        - {x: 13, y: -16}
+        - {x: 18, y: -16}
+        - {x: 23, y: -14}
+        - {x: 22, y: -10}
+        - {x: 20, y: -8}
+        - {x: 26, y: -7}
+        - {x: 15, y: 62}
+        - {x: -22, y: 62}
+        - {x: -32, y: 22}
+        - {x: -32, y: -59}
+        - {x: -30, y: -59}
+        - {x: -14, y: -61}
+        - {x: -4, y: -38}
+        - {x: -4, y: -22}
+        - {x: -3, y: -46}
+        - {x: -11, y: -53}
+        - {x: -11, y: -59}
+        - {x: -7, y: -62}
+        - {x: -2.1836395, y: -57.93253}
+        - {x: 6.865082, y: -57.980732}
+        - {x: 8.132004, y: -46.085682}
+        - {x: 16.299713, y: -41.45002}
+        - {x: 25.96347, y: -40.81199}
+        - {x: 35, y: -47}
+        - {x: 18, y: -33}
+      - - {x: 16, y: -27}
+        - {x: 16, y: -33}
+        - {x: 18, y: -34}
+        - {x: 22, y: -34}
+        - {x: 22, y: -27}
+      - - {x: 17, y: -18}
+        - {x: 14, y: -19}
+        - {x: 9, y: -23}
+        - {x: 9, y: -28}
+        - {x: 11, y: -30}
+        - {x: 15, y: -30}
+        - {x: 19, y: -26}
+        - {x: 19, y: -20}
+      - - {x: 6.758911, y: -57.83928}
+        - {x: 6.758911, y: -56.499523}
+        - {x: 6.758911, y: -56.499523}
+        - {x: 6.758911, y: -57.83928}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Nochvay_Idle_Zombie_01_64x128_4
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 0
+        width: 70
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8, y: -20}
+        - {x: 8, y: -3}
+        - {x: 9, y: 2}
+        - {x: 8, y: -8}
+        - {x: 8, y: -10}
+        - {x: 13, y: -16}
+        - {x: 18, y: -16}
+        - {x: 23, y: -14}
+        - {x: 22, y: -10}
+        - {x: 20, y: -8}
+        - {x: 18, y: -8}
+        - {x: 19, y: -5}
+        - {x: 21, y: 32}
+        - {x: 7, y: 62}
+        - {x: -21, y: 62}
+        - {x: -32, y: 16}
+        - {x: -32, y: -5}
+        - {x: -27, y: -10}
+        - {x: -19, y: -9}
+        - {x: -14, y: 2}
+        - {x: -32, y: -52}
+        - {x: -32, y: -57}
+        - {x: -30, y: -59}
+        - {x: -14, y: -61}
+        - {x: -4, y: -38}
+        - {x: -4, y: -22}
+        - {x: -3, y: -46}
+        - {x: -11, y: -53}
+        - {x: -11, y: -59}
+        - {x: -7, y: -62}
+        - {x: -1.855957, y: -58.107224}
+        - {x: 8.539795, y: -57.813263}
+        - {x: 9.527924, y: -52.07153}
+        - {x: 35, y: -49}
+        - {x: 13, y: -50}
+      - - {x: 14, y: -48}
+        - {x: 15, y: -50}
+        - {x: 18, y: -50}
+        - {x: 23, y: -48}
+        - {x: 23, y: -42}
+        - {x: 22, y: -40}
+        - {x: 18, y: -40}
+        - {x: 14, y: -42}
+      - - {x: 14, y: -33}
+        - {x: 16, y: -35}
+        - {x: 19, y: -34}
+        - {x: 19, y: -30}
+        - {x: 17, y: -28}
+        - {x: 14, y: -29}
+      - - {x: 9, y: -23}
+        - {x: 8, y: -25}
+        - {x: 8, y: -30}
+        - {x: 10, y: -31}
+        - {x: 12, y: -31}
+        - {x: 14, y: -30}
+        - {x: 14, y: -23}
+      - - {x: 14, y: -24}
+        - {x: 16, y: -26}
+        - {x: 19, y: -25}
+        - {x: 19, y: -20}
+        - {x: 17, y: -18}
+        - {x: 14, y: -19}
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
