@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Food
+  - Weapon
+  - Item
+  - Enemy
+  - Ground
+  - Bullet
+  - Inventory
+  - InventorySlot
+  - Water
+  - HealthPack
+  - End Level Trigger
+  - Grass
+  - Stone
+  - Dirt
+  - Zombie
+  - Bandit
+  - KillBlock
+  - Spike
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Background
+  - Background Vegetation
+  - Foreground
+  - Text
+  - Player
+  - Stone
+  - Background Art
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Background Art
+    uniqueID: 3513099815
+    locked: 0
+  - name: Background
+    uniqueID: 3007235109
+    locked: 0
+  - name: CaveBackground
+    uniqueID: 1430551151
+    locked: 0
+  - name: Background Objects
+    uniqueID: 2905367119
+    locked: 0
+  - name: Background Vegetation
+    uniqueID: 1748361327
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Foreground Vegetation
+    uniqueID: 1058157929
+    locked: 0
+  - name: Foreground
+    uniqueID: 1183463441
+    locked: 0
+  - name: Special Items
+    uniqueID: 1294629773
+    locked: 0
