@@ -165,7 +165,6 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(attack))
         {
-            Debug.Log("Mouse 0 ");
             if (tory.CurrentAttackType == "ranged") {
 				tory.Attack (gunshotSound);
 			} 
