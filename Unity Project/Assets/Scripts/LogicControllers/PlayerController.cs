@@ -85,7 +85,7 @@ public class PlayerController : MonoBehaviour {
             if(tory.Stamina < 500)
                 tory.AdjustStamina(0.25f);
         }
-        if(Input.GetKeyDown(attack) && tory.Stamina > 10)
+        if((tory.MeleeWeapon != null || tory.RangedWeapon != null) && Input.GetKeyDown(attack) && tory.Stamina > 10)
         {
             tory.AdjustStamina(-10);
         }
@@ -123,9 +123,9 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyDown(jumpKey))
         {
 			tory.GroundCheck();
-			tory.Jump();
-			audioSource.clip = jumpSound;
-			audioSource.Play ();
+            tory.Jump();
+            audioSource.clip = jumpSound;
+            audioSource.Play();
         }
         
         if (Input.GetKeyDown(sprintKey))

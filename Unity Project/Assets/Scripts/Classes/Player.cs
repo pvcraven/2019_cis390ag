@@ -203,6 +203,7 @@ public class Player : ICharacterInterface
 			Vector2 jumpVelocity = new Vector2(0, jumpForce);
 			rb.AddForce(jumpVelocity);
             rb.drag = 1;
+            AdjustStamina(-50);
         }
 	}
 
