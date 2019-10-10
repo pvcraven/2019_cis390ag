@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip jumpSound;
 	public AudioClip gameOverMusic;
 	public float soundEffectVolumeLevel = 0.10f;
+   
 
     void Start() {
 
@@ -120,7 +121,7 @@ public class PlayerController : MonoBehaviour {
             //pauseCode
         }
 
-		if(Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && tory.IsGrounded)
         {
 			tory.GroundCheck();
 			tory.Jump();
