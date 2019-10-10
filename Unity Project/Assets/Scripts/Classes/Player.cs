@@ -582,8 +582,19 @@ public class Player : ICharacterInterface
                 if(item.name.Contains("Knife"))
                 {
                     MeleeWeapon = "Knife";
+                    currentAttackType = "melee";
                 }
             }
+            if (currentRangedWeapon == null)
+            {
+                if (item.name.Contains("Pistol"))
+                {
+                    MeleeWeapon = "Gun";
+                    currentAttackType = "ranged";
+                }
+            }
+
+            this.player.GetComponent<StatusBarLogic>().SetWeapon();
 
             return item;
         }
