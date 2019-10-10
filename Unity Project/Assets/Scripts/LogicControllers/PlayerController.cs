@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyDown(jumpKey))
         {
 			tory.GroundCheck();
-            if (tory.Stamina > 51)
+            if (tory.Stamina > 51 && Time.timeScale > 0)
             {
                 tory.Jump();
                 Debug.Log(tory.Stamina);
