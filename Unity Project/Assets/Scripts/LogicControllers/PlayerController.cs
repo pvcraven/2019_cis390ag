@@ -123,9 +123,13 @@ public class PlayerController : MonoBehaviour {
 		if(Input.GetKeyDown(jumpKey))
         {
 			tory.GroundCheck();
-            tory.Jump();
-            audioSource.clip = jumpSound;
-            audioSource.Play();
+            if (tory.Stamina > 51)
+            {
+                tory.Jump();
+                Debug.Log(tory.Stamina);
+                audioSource.clip = jumpSound;
+                audioSource.Play();
+            }
         }
         
         if (Input.GetKeyDown(sprintKey))
