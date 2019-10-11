@@ -589,7 +589,7 @@ public class Player : ICharacterInterface
             {
                 if (item.name.Contains("Pistol"))
                 {
-                    MeleeWeapon = "Gun";
+                    RangedWeapon = "Gun";
                     currentAttackType = "ranged";
                 }
             }
