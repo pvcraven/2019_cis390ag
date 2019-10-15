@@ -253,16 +253,4 @@ public class PlayerController : MonoBehaviour {
     }
     #endregion
 
-    //Did you just add bool b so you could you the same method name? This is bad overloading. What does this do?
-    //public bool MeleeAnimationDelay(bool b)
-    //{
-    //    tory.SetAnimationFalse();
-    //    return false;
-    //}
-
-    //public void MeleeAnimationDelay()
-    //{
-    //    attackCooldown = attackDelay;
-    //    animationDelay = true;
-    //}
 }

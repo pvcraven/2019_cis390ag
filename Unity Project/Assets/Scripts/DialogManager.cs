@@ -63,7 +63,6 @@ public class DialogManager : MonoBehaviour
 	string format_text (Text dialog_text, string str) {
 		string return_value = str;
 		if (str.Contains ("*BOLD*")) {
-			//Debug.Log ("Bold");
 			dialog_text.fontStyle = FontStyle.Bold;
 			return_value = return_value.Replace ("*BOLD*", "");
 		}
