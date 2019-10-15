@@ -177,11 +177,11 @@ public class Zombie : ICharacterInterface
         if (Time.timeScale == 0)
             return;
 
-        //Debug.Log("C");
+
 
         if (!facingRight)
         {
-            //Debug.Log("A");
+
             if(!CheckForPlayer())
             {
                 zombie.transform.Translate(Vector2.right * this.Speed * Time.fixedDeltaTime);
@@ -205,7 +205,6 @@ public class Zombie : ICharacterInterface
 
         if(zombie.transform.position.x <= this.initialPosition.x - paceDistance)
         {
-            //Debug.Log("stuff");
 
             if (facingRight)
             {
@@ -215,7 +214,7 @@ public class Zombie : ICharacterInterface
 
         else if (zombie.transform.position.x >= initialPosition.x)
         {
-            //Debug.Log("Morestuff");
+
 
             if (!facingRight)
             {
@@ -225,7 +224,7 @@ public class Zombie : ICharacterInterface
 
         this.Walking = true;
 
-        //zombie.GetComponent<Animator>().SetBool("walking", this.Walking);
+
     }
     bool CheckForPlayer()
     {

@@ -125,9 +125,9 @@ public class Player : ICharacterInterface
 	private int strength = 10;
 	private int speed = 2;
 	private bool isGrounded = false;
-	private int jumpForce = 450;
-	private int walkForce = 15;
-	private int sprintForce = 20;
+	private int jumpForce = 10;
+	private int walkForce = 750;
+	private int sprintForce = 1000;
     private Animator anim;
     private int fallMultiplier = 3;
 	private int lowJumpMultiplier = 2;
@@ -201,8 +201,10 @@ public class Player : ICharacterInterface
 		{
 			// Apply force to jump
 			Vector2 jumpVelocity = new Vector2(0, jumpForce);
-			rb.AddForce(jumpVelocity);
+			rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
             rb.drag = 1;
+            AdjustStamina(-50);
+            this.IsGrounded = false;
         }
 	}
 
@@ -216,13 +218,17 @@ public class Player : ICharacterInterface
 		CheckDirection(direction);
 		this.Walking = true;
 		Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-		Vector2 walkVector = new Vector2(direction * walkForce, rb.velocity.y);
+		Vector2 walkVector = new Vector2(direction * walkForce * Time.deltaTime, rb.velocity.y);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
             walkVector.x *= 1.2f;
 
         if (!walkingTooFast())
             rb.AddForce(walkVector);
+        if(rb.velocity.magnitude <.01)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
 		player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
@@ -254,13 +260,18 @@ public class Player : ICharacterInterface
 		CheckDirection(direction);
 		this.Walking = true;
 		Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-		Vector2 sprintVector = new Vector2(direction * sprintForce, rb.velocity.y);
+		Vector2 sprintVector = new Vector2(direction * sprintForce * Time.deltaTime, rb.velocity.y);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
             sprintVector.x *= 1.2f;
 
         if (!runningTooFast())
             rb.AddForce(sprintVector);
+
+        if(rb.velocity.magnitude <.01)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
 		player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}

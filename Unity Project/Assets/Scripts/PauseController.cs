@@ -8,6 +8,8 @@ public class PauseController : MonoBehaviour
 	public Transform settingsMenu;
 	public Transform keyBindingsMenu;
 	public Transform player;
+	public Transform videoSettingsMenu;
+	public Transform soundSettingsMenu;
 
 	private bool gamePaused = false;
 
@@ -80,7 +82,35 @@ public class PauseController : MonoBehaviour
 			defaultPauseMenu.gameObject.SetActive(true);
 		}
 	}
-	
+
+	public void OpenVideoSettingsMenu(bool isOpen)
+	{
+		if (isOpen)
+		{
+			videoSettingsMenu.gameObject.SetActive(true);
+			settingsMenu.gameObject.SetActive(false);
+		}
+		else
+		{
+			videoSettingsMenu.gameObject.SetActive(false);
+			settingsMenu.gameObject.SetActive(true);
+		}
+	}
+
+	public void OpenSoundSettingsMenu(bool isOpen)
+	{
+		if (isOpen)
+		{
+			soundSettingsMenu.gameObject.SetActive(true);
+			settingsMenu.gameObject.SetActive(false);
+		}
+		else
+		{
+			soundSettingsMenu.gameObject.SetActive(false);
+			settingsMenu.gameObject.SetActive(true);
+		}
+	}
+
 	public void OpenKeyBindingsMenu(bool isOpen)
 	{
 		if (isOpen)
