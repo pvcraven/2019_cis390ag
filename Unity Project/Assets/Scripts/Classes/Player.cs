@@ -223,6 +223,10 @@ public class Player : ICharacterInterface
 
         if (!walkingTooFast())
             rb.AddForce(walkVector);
+        if(rb.velocity.magnitude <.01)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
 		player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
@@ -261,6 +265,11 @@ public class Player : ICharacterInterface
 
         if (!runningTooFast())
             rb.AddForce(sprintVector);
+
+        if(rb.velocity.magnitude <.01)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
 		player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
