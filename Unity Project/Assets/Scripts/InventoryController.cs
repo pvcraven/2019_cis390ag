@@ -32,7 +32,7 @@ public class InventoryController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale > 0)
         {
             if (!inventoryIsOpen)
             {
@@ -100,7 +100,6 @@ public class InventoryController : MonoBehaviour
                 else if (inventoryItems[i].tag == "HealthPack")
                 {
                     player.tory.UseHealthPack();
-                    Debug.Log("Health Pack Increased health to: " + player.tory.Health);
                     RemoveItem(i);
                 }
 
