@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-	public KeyCode jumpKey = KeyCode.Space;
-	public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode interactKey = KeyCode.F;
     public KeyCode attack = KeyCode.Mouse0;
-	public KeyCode interactKey = KeyCode.R;
-	public KeyCode pauseKey = KeyCode.Escape;
+    public KeyCode pauseKey = KeyCode.Escape;
     public KeyCode switchWeapon = KeyCode.LeftControl;
 
     private AudioSource audioSource;
@@ -164,7 +164,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(attack))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             if (tory.CurrentAttackType == "ranged") {
 				tory.Attack (gunshotSound);
@@ -173,7 +173,7 @@ public class PlayerController : MonoBehaviour {
 				tory.Attack (knifeSwipe);
 			}
         }
-        if (Input.GetKeyDown(interactKey))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Destroy(tory.Interact(pickupSound));
         }
