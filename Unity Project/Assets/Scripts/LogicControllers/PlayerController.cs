@@ -6,16 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-	public KeyCode jumpKey = KeyCode.Space;
-	public KeyCode sprintKey = KeyCode.LeftShift;
-<<<<<<< HEAD
-    public KeyCode attack = KeyCode.Mouse1;
-	public KeyCode interactKey = KeyCode.F;
-=======
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode interactKey = KeyCode.F;
     public KeyCode attack = KeyCode.Mouse0;
-	public KeyCode interactKey = KeyCode.R;
->>>>>>> a48c9cf98b04d16fe111370f5214579c27a5d375
-	public KeyCode pauseKey = KeyCode.Escape;
+    public KeyCode pauseKey = KeyCode.Escape;
     public KeyCode switchWeapon = KeyCode.LeftControl;
 
     private AudioSource audioSource;
