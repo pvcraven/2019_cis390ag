@@ -8,8 +8,13 @@ public class PlayerController : MonoBehaviour {
 
 	public KeyCode jumpKey = KeyCode.Space;
 	public KeyCode sprintKey = KeyCode.LeftShift;
+<<<<<<< HEAD
     public KeyCode attack = KeyCode.Mouse1;
 	public KeyCode interactKey = KeyCode.F;
+=======
+    public KeyCode attack = KeyCode.Mouse0;
+	public KeyCode interactKey = KeyCode.R;
+>>>>>>> a48c9cf98b04d16fe111370f5214579c27a5d375
 	public KeyCode pauseKey = KeyCode.Escape;
     public KeyCode switchWeapon = KeyCode.LeftControl;
 
@@ -76,9 +81,9 @@ public class PlayerController : MonoBehaviour {
         if(tory.Dead == false)
             CheckforInput();
 
-        if (Input.GetKey(sprintKey) && walk && tory.Stamina > 1)
+        if (Input.GetKey(sprintKey) && walk && tory.Stamina > 2)
         {
-            tory.AdjustStamina(-1);
+            tory.AdjustStamina(-2);
 
         }
         else
@@ -138,7 +143,7 @@ public class PlayerController : MonoBehaviour {
             sprintKeyDown = false;
         }
 
-        if (sprintKeyDown && walk && tory.Stamina > 0)
+        if (sprintKeyDown && walk && tory.Stamina > 2)
         {
             tory.Sprint(direction);
             if(tory.IsGrounded && step == true)
@@ -166,7 +171,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-			if (tory.CurrentAttackType == "ranged") {
+            if (tory.CurrentAttackType == "ranged") {
 				tory.Attack (gunshotSound);
 			} 
 			else {
