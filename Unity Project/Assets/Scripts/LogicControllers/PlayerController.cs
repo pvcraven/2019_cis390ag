@@ -76,9 +76,9 @@ public class PlayerController : MonoBehaviour {
         if(tory.Dead == false)
             CheckforInput();
 
-        if (Input.GetKey(sprintKey) && walk && tory.Stamina > 1)
+        if (Input.GetKey(sprintKey) && walk && tory.Stamina > 2)
         {
-            tory.AdjustStamina(-1);
+            tory.AdjustStamina(-2);
 
         }
         else
@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour {
             sprintKeyDown = false;
         }
 
-        if (sprintKeyDown && walk && tory.Stamina > 0)
+        if (sprintKeyDown && walk && tory.Stamina > 2)
         {
             tory.Sprint(direction);
             if(tory.IsGrounded && step == true)
