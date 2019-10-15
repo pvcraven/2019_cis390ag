@@ -19,6 +19,19 @@ public class ZombieSpawner : MonoBehaviour {
 
             //If we add more animations to the other zombie we can have different kinds of zombies spawn
 
+            if(0 <= zombieNumber <= 2)
+            {
+                zombieNumber = rand.Next(0, zombieSpawnRate);
+
+                //If we add more animations to the other zombie we can have different kinds of zombies spawn
+                UnityEngine.Object.Destroy(zombie, 15.0f);
+            }
+            else if(zombieNumber == 2 || zombieNumber == 1)
+            {
+                GameObject zombie = UnityEngine.Object.Instantiate(zombiePrefab[zombieNumber], zombieSpawner.position, Quaternion.identity);
+                UnityEngine.Object.Destroy(zombie, 15.0f);
+            }
+
             if (zombieNumber == 0 || zombieNumber == 2 || zombieNumber == 4)
             {
                 GameObject zombie = UnityEngine.Object.Instantiate(zombiePrefab[zombieNumber], zombieSpawner.position, Quaternion.identity);

@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-	public KeyCode jumpKey = KeyCode.Space;
-	public KeyCode sprintKey = KeyCode.LeftShift;
-    public KeyCode attack = KeyCode.F;
-	public KeyCode interactKey = KeyCode.R;
-	public KeyCode pauseKey = KeyCode.Escape;
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode interactKey = KeyCode.F;
+    public KeyCode attack = KeyCode.Mouse0;
+    public KeyCode pauseKey = KeyCode.Escape;
     public KeyCode switchWeapon = KeyCode.LeftControl;
 
     private AudioSource audioSource;
@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour {
 	public AudioClip jumpSound;
 	public AudioClip gameOverMusic;
 	public float soundEffectVolumeLevel = 0.10f;
+   
 
     void Start() {
 
@@ -120,7 +121,7 @@ public class PlayerController : MonoBehaviour {
             //pauseCode
         }
 
-		if(Input.GetKeyDown(jumpKey))
+        if (Input.GetKeyDown(jumpKey) && tory.IsGrounded)
         {
 			tory.GroundCheck();
             if (tory.Stamina > 51 && Time.timeScale > 0)
@@ -167,16 +168,16 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(attack))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-			if (tory.CurrentAttackType == "ranged") {
+            if (tory.CurrentAttackType == "ranged") {
 				tory.Attack (gunshotSound);
 			} 
 			else {
 				tory.Attack (knifeSwipe);
 			}
         }
-        if (Input.GetKeyDown(interactKey))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Destroy(tory.Interact(pickupSound));
         }
@@ -256,16 +257,4 @@ public class PlayerController : MonoBehaviour {
     }
     #endregion
 
-    //Did you just add bool b so you could you the same method name? This is bad overloading. What does this do?
-    //public bool MeleeAnimationDelay(bool b)
-    //{
-    //    tory.SetAnimationFalse();
-    //    return false;
-    //}
-
-    //public void MeleeAnimationDelay()
-    //{
-    //    attackCooldown = attackDelay;
-    //    animationDelay = true;
-    //}
 }

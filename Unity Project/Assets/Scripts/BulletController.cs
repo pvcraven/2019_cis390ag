@@ -11,7 +11,6 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("BulletTriggerEnter");
         if(other.CompareTag("Zombie"))
         {
             other.gameObject.GetComponent<ZombieControllerScript>().TakeDamage();
@@ -19,13 +18,8 @@ public class BulletController : MonoBehaviour {
         }
         else if (other.CompareTag("Bandit"))
         {
-            //other.gameObject.GetComponent<BanditEnemyController>().TakeDamage();
         }
     }
 
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    Destroy(gameObject);
-    //}
 
 }
