@@ -135,7 +135,7 @@ public class Player : ICharacterInterface
 	private bool walking = false;
 	private string currentMeleeWeapon = null;
 	private string currentRangedWeapon = null;
-	private string currentAttackType = "melee";
+	private string currentAttackType = "";
 	private IDictionary<string, string> statusBarInformation = new Dictionary<string, string>();
 	private Weapon weapon = new Weapon();
     public float color_flash_timer = 0;
@@ -398,7 +398,6 @@ public class Player : ICharacterInterface
 			var touching = PlayerIsTouchingItem(item);
 			if (touching)
 			{
-				this.player.GetComponent<StatusBarLogic>().SetWeapon();
 				//Debug.Log("item " + item);
 				//Debug.Log("Weapons " + weapons.ToArray().ToString());
 				return InteractWithObject(item, weapons, clip);
