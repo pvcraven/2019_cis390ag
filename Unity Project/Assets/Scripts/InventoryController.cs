@@ -19,7 +19,8 @@ public class InventoryController : MonoBehaviour
     private GameObject[] inventorySlots;
     private int numOfWeapons = 0;
 
-    private AudioSource audiosource;
+    public AudioSource audiosource;
+    public AudioSource waterAudioSource;
 
     void Start()
     {
@@ -32,9 +33,9 @@ public class InventoryController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale > 0)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!inventoryIsOpen)
+            if (!inventoryIsOpen && Time.timeScale > 0)
             {
                 audiosource.clip = audioclips[0];
                 audiosource.Play();
@@ -82,8 +83,7 @@ public class InventoryController : MonoBehaviour
                 if (inventoryItems[i].tag == "Water")
                 {
                     player.tory.ConsumeEdibleItem();
-                    audiosource.clip = audioclips[2];
-                    audiosource.Play();
+                    waterAudioSource.Play();
                     RemoveItem(i);
                 }
                 else if (inventoryItems[i].tag == "Food")
@@ -103,7 +103,6 @@ public class InventoryController : MonoBehaviour
                     Debug.Log("Health Pack Increased health to: " + player.tory.Health);
                     RemoveItem(i);
                 }
-
                 return;
             }
         }
