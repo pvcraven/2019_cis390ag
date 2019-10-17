@@ -100,7 +100,6 @@ public class InventoryController : MonoBehaviour
                 else if (inventoryItems[i].tag == "HealthPack")
                 {
                     player.tory.UseHealthPack();
-                    Debug.Log("Health Pack Increased health to: " + player.tory.Health);
                     RemoveItem(i);
                 }
                 return;
