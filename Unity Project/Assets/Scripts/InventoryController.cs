@@ -35,21 +35,25 @@ public class InventoryController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!inventoryIsOpen && Time.timeScale > 0)
+            if (Time.timeScale > 0)
             {
-                audiosource.clip = audioclips[0];
-                audiosource.Play();
-                inventoryPanel.SetActive(true);
-                inventoryIsOpen = true;
-                pauseGame.PauseGame();
-            }
-            else
-            {
-                audiosource.clip = audioclips[1];
-                audiosource.Play();
-                inventoryPanel.SetActive(false);
-                inventoryIsOpen = false;
-                pauseGame.UnPauseGame();
+                if (!inventoryIsOpen)
+                {
+                    Debug.Log("Open");
+                    audiosource.clip = audioclips[0];
+                    audiosource.Play();
+                    inventoryPanel.SetActive(true);
+                    inventoryIsOpen = true;
+                    pauseGame.PauseGame();
+                }
+                else
+                {
+                    audiosource.clip = audioclips[1];
+                    audiosource.Play();
+                    inventoryPanel.SetActive(false);
+                    inventoryIsOpen = false;
+                    pauseGame.UnPauseGame();
+                }
             }
         }
     }
