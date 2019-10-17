@@ -15,19 +15,6 @@ public class MainMenuController : MonoBehaviour
 	public static readonly String LEVEL_1_NAME = "Level 1";
 	public static readonly String LEVEL_2_NAME = "Level2New";
 	#endregion
-	
-	public void ResumeGame()
-	{
-		if (hasSavedGame)
-		{
-			//TODO: Add code to resume a game once the saving/loading functionality is implemented 
-		}
-		else
-		{
-			StartNewGame();
-		}
-	}
-	
 	public void StartNewGame()
 	{
 		SceneManager.LoadScene(TRAINING_LEVEL_NAME);
