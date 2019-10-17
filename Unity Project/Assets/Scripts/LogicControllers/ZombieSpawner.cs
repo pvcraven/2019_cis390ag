@@ -19,7 +19,7 @@ public class ZombieSpawner : MonoBehaviour {
 
             //If we add more animations to the other zombie we can have different kinds of zombies spawn
 
-            if(0 <= zombieNumber <= 2)
+            if(0 <= zombieNumber && zombieNumber <= 2)
             {
                 zombieNumber = rand.Next(0, zombieSpawnRate);
 
