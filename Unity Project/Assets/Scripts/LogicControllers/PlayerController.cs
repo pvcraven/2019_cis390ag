@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour {
             if (tory.Stamina > 51 && Time.timeScale > 0)
             {
                 tory.Jump();
-                Debug.Log(tory.Stamina);
                 audioSource.clip = jumpSound;
                 audioSource.Play();
             }
@@ -168,7 +167,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             if (tory.CurrentAttackType == "ranged") {
 				tory.Attack (gunshotSound);
