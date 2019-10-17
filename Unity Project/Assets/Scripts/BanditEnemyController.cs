@@ -14,7 +14,8 @@ public class BanditEnemyController : MonoBehaviour {
     public bool isGrounded = false;
     public Transform groundCheck;
     public LayerMask whatIsGround;
-    
+    private Vector2 knockbackVector = new Vector2(20, 10);
+
     public int health = 50;
 
     // Use this for initialization
@@ -84,9 +85,22 @@ public class BanditEnemyController : MonoBehaviour {
     public void TakeDamage(int damage)
     {
         this.health -= damage;
+        knockback();
         if (health <= 0)
         {
             Destroy(rb.gameObject);
         }
+    }
+
+    private void knockback()
+    {
+        GameObject player = GameObject.Find("Player");
+        Rigidbody2D playerRB = player.GetComponent<Rigidbody2D>();
+        knockbackVector.x += -rb.velocity.x;
+
+        if (playerRB.position.x > rb.position.x)
+            knockbackVector.x *= -1;
+
+        rb.AddForce(knockbackVector, ForceMode2D.Impulse);
     }
 }
