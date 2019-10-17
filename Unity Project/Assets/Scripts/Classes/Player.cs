@@ -217,7 +217,7 @@ public class Player : ICharacterInterface
 		CheckDirection(direction);
 		this.Walking = true;
 		Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-		Vector2 walkVector = new Vector2(direction * walkForce * Time.deltaTime, rb.velocity.y);
+		Vector2 walkVector = new Vector2(direction * walkForce * Time.deltaTime, 0);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
             walkVector.x *= 1.2f;
@@ -259,7 +259,7 @@ public class Player : ICharacterInterface
 		CheckDirection(direction);
 		this.Walking = true;
 		Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-		Vector2 sprintVector = new Vector2(direction * sprintForce * Time.deltaTime, rb.velocity.y);
+		Vector2 sprintVector = new Vector2(direction * sprintForce * Time.deltaTime, 0);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
             sprintVector.x *= 1.2f;
