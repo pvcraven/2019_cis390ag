@@ -587,24 +587,27 @@ public class Player : ICharacterInterface
             AudioSource.PlayClipAtPoint(clip, player.transform.position);
             inArray.Remove(item);
 
-            if(currentMeleeWeapon == null)
+            if (item.tag.Contains("Weapon"))
             {
-                if(item.name.Contains("Knife"))
+                if (currentMeleeWeapon == null)
                 {
-                    MeleeWeapon = "Knife";
-                    currentAttackType = "melee";
+                    if (item.name.Contains("Knife"))
+                    {
+                        this.currentMeleeWeapon = "Knife";
+                        this.currentAttackType = "melee";
+                    }
                 }
-            }
-            if (currentRangedWeapon == null)
-            {
-                if (item.name.Contains("Pistol"))
+                if (currentRangedWeapon == null)
                 {
-                    RangedWeapon = "Gun";
-                    currentAttackType = "ranged";
+                    if (item.name.Contains("Pistol"))
+                    {
+                        this.currentRangedWeapon = "Gun";
+                        this.currentAttackType = "ranged";
+                    }
                 }
-            }
 
-            this.player.GetComponent<StatusBarLogic>().SetWeapon();
+                this.player.GetComponent<StatusBarLogic>().SetWeapon();
+            }
 
             return item;
         }

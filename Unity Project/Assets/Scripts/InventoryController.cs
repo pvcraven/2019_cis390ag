@@ -57,7 +57,7 @@ public class InventoryController : MonoBehaviour
     {
        foreach (var item in inventoryItems)
         {
-            if (item != null && item.tag == "Weapon")
+            if (item != null && item.tag.Contains("Weapon"))
                 return true;
         }
 
