@@ -19,8 +19,6 @@ public class ZombieControllerScript : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cc;
     public float health = 100f;
-	private AudioSource audio;
-
 
     void Start()
     {
@@ -28,7 +26,7 @@ public class ZombieControllerScript : MonoBehaviour
         cc = GetComponent<CapsuleCollider2D>();
         flipTime = Time.time + timeTravelled;
         anim = GetComponent<Animator>();
-		audio = GetComponent<AudioSource> ();
+		// audio = GetComponent<AudioSource> ();
     }
 
     void FixedUpdate()
@@ -83,9 +81,9 @@ public class ZombieControllerScript : MonoBehaviour
 
 	void sound_manager () {
 		if (Vector2.Distance (player.transform.position, transform.position) < 5) {
-			if (!audio.isPlaying) {
-				audio.Play ();
-				audio.Play (44100);
+			if (!GetComponent<AudioSource>().isPlaying) {
+				GetComponent<AudioSource>().Play ();
+				GetComponent<AudioSource>().Play (44100);
 			}
 		}
 	}
