@@ -39,7 +39,6 @@ public class InventoryController : MonoBehaviour
             {
                 if (!inventoryIsOpen)
                 {
-                    Debug.Log("Open");
                     audiosource.clip = audioclips[0];
                     audiosource.Play();
                     inventoryPanel.SetActive(true);
