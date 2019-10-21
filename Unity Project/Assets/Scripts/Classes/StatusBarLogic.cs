@@ -20,7 +20,7 @@ public class StatusBarLogic : MonoBehaviour
     private float stamina = 500;
 
     public RectTransform healthPanel;
-    public RectTransform stausPanel;
+    public RectTransform statusPanel;
     public GameObject gunPanel;
     public GameObject knifePanel;
 
@@ -79,7 +79,7 @@ public class StatusBarLogic : MonoBehaviour
 
         float max_stamina = 500; // This should be a member of something... but it is just "500" everywhere 
         float new_width_of_panel = -((1 - (stamina / max_stamina)) * 220);
-        stausPanel.offsetMax = new Vector2(new_width_of_panel, -0); // new Vector2(-right, -top);
+        statusPanel.offsetMax = new Vector2(new_width_of_panel, -0); // new Vector2(-right, -top);
     }
 
     void SetAttackType()
