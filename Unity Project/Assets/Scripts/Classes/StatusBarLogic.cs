@@ -97,17 +97,18 @@ public class StatusBarLogic : MonoBehaviour
 
     public void SetWeapon()
     {
+        statusBarInformation = GetComponent<PlayerController>().tory.GetStatusBarInformation;
         statusBarInformation.TryGetValue("AttackType", out statusBarAttackType);
 
         if (statusBarAttackType == "melee")
         {
-            knifePanel.SetActive(false);
-            gunPanel.SetActive(true);
+            knifePanel.SetActive(true);
+            gunPanel.SetActive(false);
         }
         else if (statusBarAttackType == "ranged")
         {
-            gunPanel.SetActive(false);
-            knifePanel.SetActive(true);
+            gunPanel.SetActive(true);
+            knifePanel.SetActive(false);
         }
     }
 }
