@@ -21,7 +21,6 @@ public class ZombieSpawner : MonoBehaviour {
 
             if(0 <= zombieNumber  && zombieNumber <= 2)
             {
-                zombieNumber = rand.Next(0, zombieSpawnRate);
                 GameObject zombie = UnityEngine.Object.Instantiate(zombiePrefab[zombieNumber], zombieSpawner.position, Quaternion.identity);
 
                 //If we add more animations to the other zombie we can have different kinds of zombies spawn
