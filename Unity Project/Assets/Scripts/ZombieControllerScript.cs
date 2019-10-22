@@ -19,8 +19,6 @@ public class ZombieControllerScript : MonoBehaviour
     private Animator anim;
     private CapsuleCollider2D cc;
     public float health = 100f;
-	private AudioSource audio;
-
 
     void Start()
     {
@@ -28,18 +26,12 @@ public class ZombieControllerScript : MonoBehaviour
         cc = GetComponent<CapsuleCollider2D>();
         flipTime = Time.time + timeTravelled;
         anim = GetComponent<Animator>();
-		audio = GetComponent<AudioSource> ();
+		// audio = GetComponent<AudioSource> ();
     }
 
     void FixedUpdate()
     {
 		sound_manager ();
-        //rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
-
-        //if (move > 0 && !facingLeft)
-        //    Flip();
-        //else if (move < 0 && facingLeft)
-        //    Flip();
 
         characterFound = checkForPlayer();
         onGround = DetermineOnGrounded();
@@ -72,7 +64,6 @@ public class ZombieControllerScript : MonoBehaviour
         }
         else
         {
-            Debug.Log("Player found!");
             //Code for movement following player after player has been found
         }
 
@@ -90,9 +81,9 @@ public class ZombieControllerScript : MonoBehaviour
 
 	void sound_manager () {
 		if (Vector2.Distance (player.transform.position, transform.position) < 5) {
-			if (!audio.isPlaying) {
-				audio.Play ();
-				audio.Play (44100);
+			if (!GetComponent<AudioSource>().isPlaying) {
+				GetComponent<AudioSource>().Play ();
+				GetComponent<AudioSource>().Play (44100);
 			}
 		}
 	}
@@ -124,19 +115,15 @@ public class ZombieControllerScript : MonoBehaviour
         int position = 0;
         Collider2D[] overlappingObjects = Physics2D.OverlapCapsuleAll(new Vector2(cc.attachedRigidbody.position.x, cc.attachedRigidbody.position.y), new Vector2(cc.size.x, cc.size.y + .05f), cc.direction, 0);
 
-        //Debug.Log("overlappingObjects: " + overlappingObjects);
-        //Debug.Log("Position: " + position);
 
         while (position < overlappingObjects.GetLength(0))
         {
             if (overlappingObjects[position].CompareTag("Ground"))
             {
-                //Debug.Log("On Ground");
                 return true;
             }
             position++;
         }
-        //Debug.Log("Not on Ground");
 
         return false;
     }

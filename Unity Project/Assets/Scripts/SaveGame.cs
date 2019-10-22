@@ -7,7 +7,6 @@ public class SaveGame : MonoBehaviour
 
 	void Awake()
 	{
-		//loadPlayerPosition();
 	}
 
 	private void SaveGameSettings()

@@ -31,7 +31,6 @@ public class TransitionScreenController : MonoBehaviour {
     {
         previousScene = PlayerPrefs.GetInt("PreviousScene");
         nextScene = previousScene + 1;
-        Debug.Log("Loading Scene: " + nextScene);
     }
 
     void Update()
