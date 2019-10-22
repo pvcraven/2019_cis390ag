@@ -135,7 +135,7 @@ public class Player : ICharacterInterface
 	private bool walking = false;
 	private string currentMeleeWeapon = null;
 	private string currentRangedWeapon = null;
-	private string currentAttackType = "melee";
+	private string currentAttackType = "";
 	private IDictionary<string, string> statusBarInformation = new Dictionary<string, string>();
 	private Weapon weapon = new Weapon();
     public float color_flash_timer = 0;
@@ -221,7 +221,7 @@ public class Player : ICharacterInterface
 		Vector2 walkVector = new Vector2(direction * walkForce * Time.deltaTime, 0);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
-            walkVector.x *= 1.2f;
+            walkVector.x *= 1.8f;
 
         if (!walkingTooFast())
             rb.AddForce(walkVector);
@@ -230,7 +230,7 @@ public class Player : ICharacterInterface
             rb.velocity = Vector3.zero;
         }
 
-		player.GetComponent<Animator>().SetBool("walking", this.Walking);
+        player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
 
     private bool walkingTooFast()
@@ -398,7 +398,6 @@ public class Player : ICharacterInterface
 			var touching = PlayerIsTouchingItem(item);
 			if (touching)
 			{
-				this.player.GetComponent<StatusBarLogic>().SetWeapon();
 				//Debug.Log("item " + item);
 				//Debug.Log("Weapons " + weapons.ToArray().ToString());
 				return InteractWithObject(item, weapons, clip);

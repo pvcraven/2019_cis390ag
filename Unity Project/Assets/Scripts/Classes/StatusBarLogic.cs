@@ -13,35 +13,39 @@ public class StatusBarLogic : MonoBehaviour
 
     private string statusBarHealth = "100";
     private string statusBarStamina = "500";
-    private string statusBarAttackType = "melee";
+    private string statusBarAttackType = "";
     private string statusBarStrength = "0";
 
     private int health = 100;
     private float stamina = 500;
 
     public RectTransform healthPanel;
-    public RectTransform stausPanel;
-    public GameObject gunStatus;
-    public GameObject knifeStatus;
+    public RectTransform statusPanel;
+    public GameObject gunPanel;
+    public GameObject knifePanel;
 
     private float healthPanelMin;
     private float initialHealthPanelMax;
 
     private float currentHealthPanelMax;
 
+    private float screenScalingFactor;
+    private float decreaseBars;
+
 
 
 
     void Start()
     {
+        Debug.Log("Screen: " + Screen.width);
         healthPanelMin = healthPanel.GetComponent<RectTransform>().anchorMin.x;
         initialHealthPanelMax = healthPanel.GetComponent<RectTransform>().anchorMax.x;
         currentHealthPanelMax = initialHealthPanelMax;
 
-        gunStatus.SetActive(false);
-        knifeStatus.SetActive(false);
-
-        Debug.Log("HERE" + healthPanel.GetComponent<RectTransform>().anchorMax.x);
+        gunPanel.SetActive(false);
+        knifePanel.SetActive(false);
+        screenScalingFactor = Screen.width / 1024f;
+        decreaseBars = 220 * screenScalingFactor;
     }
 
     void Update()
@@ -66,7 +70,7 @@ public class StatusBarLogic : MonoBehaviour
         //Currently, it does not.
 
         float max_health = 100; // This should be a member of something... but it is just "100" everywhere 
-        float new_width_of_panel = -( (1-(health / max_health)) * 220);
+        float new_width_of_panel = -( (1-(health / max_health)) * decreaseBars);
 
         healthPanel.offsetMax = new Vector2(new_width_of_panel, -0); // new Vector2(-right, -top);
     }
@@ -76,9 +80,8 @@ public class StatusBarLogic : MonoBehaviour
         statusBarInformation.TryGetValue("Stamina", out statusBarStamina);
 
         float.TryParse(statusBarStamina, out stamina);
-
         float max_stamina = 500; // This should be a member of something... but it is just "500" everywhere 
-        float new_width_of_panel = -((1 - (stamina / max_stamina)) * 220);
+        float new_width_of_panel = -((1 - (stamina / max_stamina)) * decreaseBars);
         stausPanel.offsetMax = new Vector2(new_width_of_panel, -0); // new Vector2(-right, -top);
     }
 
@@ -98,13 +101,13 @@ public class StatusBarLogic : MonoBehaviour
 
         if (statusBarAttackType == "melee")
         {
-            gunStatus.SetActive(false);
-            knifeStatus.SetActive(true);
+            knifePanel.SetActive(false);
+            gunPanel.SetActive(true);
         }
         else if (statusBarAttackType == "ranged")
         {
-            gunStatus.SetActive(true);
-            knifeStatus.SetActive(false);
+            gunPanel.SetActive(false);
+            knifePanel.SetActive(true);
         }
     }
 }

@@ -19,7 +19,8 @@ public class InventoryController : MonoBehaviour
     private GameObject[] inventorySlots;
     private int numOfWeapons = 0;
 
-    private AudioSource audiosource;
+    public AudioSource audiosource;
+    public AudioSource waterAudioSource;
 
     void Start()
     {
@@ -32,10 +33,11 @@ public class InventoryController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab) && Time.timeScale > 0)
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if (!inventoryIsOpen)
+            if (Time.timeScale > 0 && !inventoryIsOpen)
             {
+                Debug.Log("Open");
                 audiosource.clip = audioclips[0];
                 audiosource.Play();
                 inventoryPanel.SetActive(true);
@@ -81,9 +83,9 @@ public class InventoryController : MonoBehaviour
             {
                 if (inventoryItems[i].tag == "Water")
                 {
+                    Debug.Log("WATER");
                     player.tory.ConsumeEdibleItem();
-                    audiosource.clip = audioclips[2];
-                    audiosource.Play();
+                    waterAudioSource.Play();
                     RemoveItem(i);
                 }
                 else if (inventoryItems[i].tag == "Food")
@@ -102,7 +104,6 @@ public class InventoryController : MonoBehaviour
                     player.tory.UseHealthPack();
                     RemoveItem(i);
                 }
-
                 return;
             }
         }
@@ -135,6 +136,7 @@ public class InventoryController : MonoBehaviour
 
     private void RemoveItem(int position)
     {
+        Debug.Log("Item Removed");
         var currentSlot = inventorySlots[position].GetComponent<Image>();
         inventoryItems[position] = null;
         currentSlot.sprite = null;
