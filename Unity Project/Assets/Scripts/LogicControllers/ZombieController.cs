@@ -12,6 +12,7 @@ public class ZombieController : MonoBehaviour {
     private bool isTouchingAnotherZombie = false;
     public int jumpForce = 150;
     private int health = 20;
+    private Vector2 knockbackVector = new Vector2(20, 10);
 
     // Use this for initialization
     void Start () {
@@ -78,10 +79,24 @@ public class ZombieController : MonoBehaviour {
     public void TakeDamage(int amount)
     {
         health -= amount;
+        knockback();
 
         if (health <= 0)
         {
             Destroy(zombie);
         }
+    }
+
+    private void knockback()
+    {
+        GameObject player = GameObject.Find("Player");
+        Rigidbody2D playerRB = player.GetComponent<Rigidbody2D>();
+        Rigidbody2D zombieRB = zombie.GetComponent<Rigidbody2D>();
+        knockbackVector.x += -zombieRB.velocity.x;
+
+        if (playerRB.position.x > zombieRB.position.x)
+            knockbackVector.x *= -1;
+
+        zombieRB.AddForce(knockbackVector, ForceMode2D.Impulse);
     }
 }
