@@ -221,7 +221,7 @@ public class Player : ICharacterInterface
 		Vector2 walkVector = new Vector2(direction * walkForce * Time.deltaTime, 0);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
-            walkVector.x *= 1.2f;
+            walkVector.x *= 1.8f;
 
         if (!walkingTooFast())
             rb.AddForce(walkVector);
@@ -230,7 +230,7 @@ public class Player : ICharacterInterface
             rb.velocity = Vector3.zero;
         }
 
-		player.GetComponent<Animator>().SetBool("walking", this.Walking);
+        player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
 
     private bool walkingTooFast()
