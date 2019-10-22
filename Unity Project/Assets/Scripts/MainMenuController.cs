@@ -15,19 +15,6 @@ public class MainMenuController : MonoBehaviour
 	public static readonly String LEVEL_1_NAME = "Level 1";
 	public static readonly String LEVEL_2_NAME = "Level2New";
 	#endregion
-	
-	public void ResumeGame()
-	{
-		if (hasSavedGame)
-		{
-			//TODO: Add code to resume a game once the saving/loading functionality is implemented 
-		}
-		else
-		{
-			StartNewGame();
-		}
-	}
-	
 	public void StartNewGame()
 	{
 		SceneManager.LoadScene(TRAINING_LEVEL_NAME);
@@ -57,7 +44,9 @@ public class MainMenuController : MonoBehaviour
 	{
 		// Closes Unity game if it's a full application
 		Application.Quit();
-	}
+        // Close Unity game if it's in a Unity Editor
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 	
 	public void LoadLevel1()
 	{

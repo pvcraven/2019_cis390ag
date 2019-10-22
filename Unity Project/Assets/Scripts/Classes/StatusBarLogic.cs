@@ -29,19 +29,23 @@ public class StatusBarLogic : MonoBehaviour
 
     private float currentHealthPanelMax;
 
+    private float screenScalingFactor;
+    private float decreaseBars;
+
 
 
 
     void Start()
     {
+        Debug.Log("Screen: " + Screen.width);
         healthPanelMin = healthPanel.GetComponent<RectTransform>().anchorMin.x;
         initialHealthPanelMax = healthPanel.GetComponent<RectTransform>().anchorMax.x;
         currentHealthPanelMax = initialHealthPanelMax;
 
         gunPanel.SetActive(false);
         knifePanel.SetActive(false);
-
-        Debug.Log("HERE" + healthPanel.GetComponent<RectTransform>().anchorMax.x);
+        screenScalingFactor = Screen.width / 1024f;
+        decreaseBars = 220 * screenScalingFactor;
     }
 
     void Update()
@@ -66,7 +70,7 @@ public class StatusBarLogic : MonoBehaviour
         //Currently, it does not.
 
         float max_health = 100; // This should be a member of something... but it is just "100" everywhere 
-        float new_width_of_panel = -( (1-(health / max_health)) * 220);
+        float new_width_of_panel = -( (1-(health / max_health)) * decreaseBars);
 
         healthPanel.offsetMax = new Vector2(new_width_of_panel, -0); // new Vector2(-right, -top);
     }
@@ -76,9 +80,8 @@ public class StatusBarLogic : MonoBehaviour
         statusBarInformation.TryGetValue("Stamina", out statusBarStamina);
 
         float.TryParse(statusBarStamina, out stamina);
-
         float max_stamina = 500; // This should be a member of something... but it is just "500" everywhere 
-        float new_width_of_panel = -((1 - (stamina / max_stamina)) * 220);
+        float new_width_of_panel = -((1 - (stamina / max_stamina)) * decreaseBars);
         statusPanel.offsetMax = new Vector2(new_width_of_panel, -0); // new Vector2(-right, -top);
     }
 
@@ -94,17 +97,18 @@ public class StatusBarLogic : MonoBehaviour
 
     public void SetWeapon()
     {
+        statusBarInformation = GetComponent<PlayerController>().tory.GetStatusBarInformation;
         statusBarInformation.TryGetValue("AttackType", out statusBarAttackType);
 
         if (statusBarAttackType == "melee")
         {
-            knifePanel.SetActive(false);
-            gunPanel.SetActive(true);
+            knifePanel.SetActive(true);
+            gunPanel.SetActive(false);
         }
         else if (statusBarAttackType == "ranged")
         {
-            gunPanel.SetActive(false);
-            knifePanel.SetActive(true);
+            gunPanel.SetActive(true);
+            knifePanel.SetActive(false);
         }
     }
 }
