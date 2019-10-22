@@ -47,7 +47,6 @@ public class BanditEnemyController : MonoBehaviour {
 
     private void Raycasting()
     {
-        Debug.DrawLine(sightStart.position, sightEnd.position, Color.green);
         playerSpotted = Physics2D.Linecast(sightStart.position, sightEnd.position, 1<<LayerMask.NameToLayer("Player"));
     }
 

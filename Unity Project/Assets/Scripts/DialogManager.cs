@@ -63,7 +63,6 @@ public class DialogManager : MonoBehaviour
 	string format_text (Text dialog_text, string str) {
 		string return_value = str;
 		if (str.Contains ("*BOLD*")) {
-			//Debug.Log ("Bold");
 			dialog_text.fontStyle = FontStyle.Bold;
 			return_value = return_value.Replace ("*BOLD*", "");
 		}
@@ -88,7 +87,6 @@ public class DialogManager : MonoBehaviour
 	{
 		for(int i = 0; i<list_of_dialog_events.Count; i++)
 		{
-			//Debug.Log(transform.position.x + " " + list_of_dialog_events[i].x_position + " " + dialog_that_has_taken_place[i]);
 			if (list_of_dialog_events[i].x_position <= transform.position.x && !dialog_that_has_taken_place[i]) {
 				current_dialog_event = i;
 				dialog_that_has_taken_place[i] = true;
@@ -138,16 +136,12 @@ public class DialogManager : MonoBehaviour
 							string[] parts_of_line = line.Split(':');
 							float x_position = float.Parse(parts_of_line[1]);
 							current_dialog_event.x_position = x_position;
-							//Debug.Log("New Conversation at: "+x_position);
 						} else if(line.Equals("") || line.Contains("***")) {
 							list_of_dialog_events.Add(current_dialog_event);
 							current_dialog_event = new DialogEvent();
-							//Debug.Log("Done Reading Event");
 						} else {
 							current_dialog_event.messages.Add(line);
-							//Debug.Log(line);
 						}
-						//Debug.Log(line);
 					}
 				} while (line != null);
 				theReader.Close();

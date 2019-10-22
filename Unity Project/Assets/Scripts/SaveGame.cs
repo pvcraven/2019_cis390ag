@@ -7,7 +7,6 @@ public class SaveGame : MonoBehaviour
 
 	void Awake()
 	{
-		//loadPlayerPosition();
 	}
 
 	private void SaveGameSettings()
@@ -30,7 +29,9 @@ public class SaveGame : MonoBehaviour
 		
 		// Closes Unity game if it's a full application
 		Application.Quit();
-	}
+        // Close Unity game if it's in a Unity Editor
+        UnityEditor.EditorApplication.isPlaying = false;
+    }
 	
 	private void LoadPlayerPosition()
 	{

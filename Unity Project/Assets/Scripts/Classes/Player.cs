@@ -135,7 +135,7 @@ public class Player : ICharacterInterface
 	private bool walking = false;
 	private string currentMeleeWeapon = null;
 	private string currentRangedWeapon = null;
-	private string currentAttackType = "melee";
+	private string currentAttackType = "";
 	private IDictionary<string, string> statusBarInformation = new Dictionary<string, string>();
 	private Weapon weapon = new Weapon();
     public float color_flash_timer = 0;
@@ -203,6 +203,7 @@ public class Player : ICharacterInterface
 			Vector2 jumpVelocity = new Vector2(0, jumpForce);
 			rb.AddForce(jumpVelocity, ForceMode2D.Impulse);
             rb.drag = 1;
+            AdjustStamina(-50);
             this.IsGrounded = false;
         }
 	}
@@ -220,12 +221,16 @@ public class Player : ICharacterInterface
 		Vector2 walkVector = new Vector2(direction * walkForce * Time.deltaTime, 0);
 
         if (this.IsGrounded && rb.velocity.y > 0.01f)
-            walkVector.x *= 1.2f;
+            walkVector.x *= 1.8f;
 
         if (!walkingTooFast())
             rb.AddForce(walkVector);
+        if(rb.velocity.magnitude <.01)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
-		player.GetComponent<Animator>().SetBool("walking", this.Walking);
+        player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
 
     private bool walkingTooFast()
@@ -262,6 +267,11 @@ public class Player : ICharacterInterface
 
         if (!runningTooFast())
             rb.AddForce(sprintVector);
+
+        if(rb.velocity.magnitude <.01)
+        {
+            rb.velocity = Vector3.zero;
+        }
 
 		player.GetComponent<Animator>().SetBool("walking", this.Walking);
 	}
@@ -388,7 +398,6 @@ public class Player : ICharacterInterface
 			var touching = PlayerIsTouchingItem(item);
 			if (touching)
 			{
-				this.player.GetComponent<StatusBarLogic>().SetWeapon();
 				//Debug.Log("item " + item);
 				//Debug.Log("Weapons " + weapons.ToArray().ToString());
 				return InteractWithObject(item, weapons, clip);
@@ -583,8 +592,19 @@ public class Player : ICharacterInterface
                 if(item.name.Contains("Knife"))
                 {
                     MeleeWeapon = "Knife";
+                    currentAttackType = "melee";
                 }
             }
+            if (currentRangedWeapon == null)
+            {
+                if (item.name.Contains("Pistol"))
+                {
+                    RangedWeapon = "Gun";
+                    currentAttackType = "ranged";
+                }
+            }
+
+            this.player.GetComponent<StatusBarLogic>().SetWeapon();
 
             return item;
         }
