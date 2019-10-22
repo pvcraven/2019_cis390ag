@@ -40,8 +40,6 @@ public class StatusBarLogic : MonoBehaviour
 
         gunPanel.SetActive(false);
         knifePanel.SetActive(false);
-
-        Debug.Log("HERE" + healthPanel.GetComponent<RectTransform>().anchorMax.x);
     }
 
     void Update()
