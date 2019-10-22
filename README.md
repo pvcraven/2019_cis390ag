@@ -18,41 +18,23 @@ For more on the game visit the Github wiki **[here][1]**
 **Students:**
 
 * Audrey LoVan
-
 * Braeden Ingersoll
-
 * Caleb Wolff
-
 * Drew Cummings
-
 * Elise Tauer
-
 * Erik Knouse
-
 * Issa Karadsheh
-
 * James Deaton
-
 * Josh Dietrich
-
 * Justin Hovey
-
 * Keegan Lamparek
-
 * Kyann Brown
-
 * Kyle Hovey
-
 * Matt Sebek
-
 * Nate Hayes
-
 * Nathan Hawkins
-
 * Ryan Hovey
-
 * Sam Law
-
 
 ### How to build it
 
@@ -60,14 +42,10 @@ The game was developed using Unity ver:2017.3.1f1 personal or a like version. Sc
 
 ##### Git Repository found [here][2]
 
-
-
-
 ### Running it
 Right now the game is incomplete. It is being developed for PC, Mac, Linux & standalone, an installation guide will be added when that information is finalized. 
 
 **UPDATE ON COMPLETION OF GAME**
-
 
 [1]: https://github.com/pvcraven/2018_cis390ag/wiki/game-design-document/ "Game wiki" 
 [2]: https://github.com/pvcraven/2018_cis390ag "Git Repository"

@@ -13,16 +13,16 @@ public class StatusBarLogic : MonoBehaviour
 
     private string statusBarHealth = "100";
     private string statusBarStamina = "500";
-    private string statusBarAttackType = "melee";
+    private string statusBarAttackType = "";
     private string statusBarStrength = "0";
 
     private int health = 100;
     private float stamina = 500;
 
     public RectTransform healthPanel;
-    public RectTransform stausPanel;
-    public GameObject gunStatus;
-    public GameObject knifeStatus;
+    public RectTransform statusPanel;
+    public GameObject gunPanel;
+    public GameObject knifePanel;
 
     private float healthPanelMin;
     private float initialHealthPanelMax;
@@ -42,15 +42,10 @@ public class StatusBarLogic : MonoBehaviour
         initialHealthPanelMax = healthPanel.GetComponent<RectTransform>().anchorMax.x;
         currentHealthPanelMax = initialHealthPanelMax;
 
-        gunStatus.SetActive(false);
-        knifeStatus.SetActive(false);
-
+        gunPanel.SetActive(false);
+        knifePanel.SetActive(false);
         screenScalingFactor = Screen.width / 1024f;
         decreaseBars = 220 * screenScalingFactor;
-
-        Debug.Log("Scaling" + screenScalingFactor);
-        Debug.Log("Decrease" + decreaseBars);
-        Debug.Log("HERE" + healthPanel.GetComponent<RectTransform>().anchorMax.x);
     }
 
     void Update()
@@ -106,13 +101,13 @@ public class StatusBarLogic : MonoBehaviour
 
         if (statusBarAttackType == "melee")
         {
-            gunStatus.SetActive(false);
-            knifeStatus.SetActive(true);
+            knifePanel.SetActive(false);
+            gunPanel.SetActive(true);
         }
         else if (statusBarAttackType == "ranged")
         {
-            gunStatus.SetActive(true);
-            knifeStatus.SetActive(false);
+            gunPanel.SetActive(false);
+            knifePanel.SetActive(true);
         }
     }
 }

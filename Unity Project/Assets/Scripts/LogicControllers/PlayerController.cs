@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
 
-	public KeyCode jumpKey = KeyCode.Space;
-	public KeyCode sprintKey = KeyCode.LeftShift;
-    public KeyCode attack = KeyCode.F;
-	public KeyCode interactKey = KeyCode.R;
-	public KeyCode pauseKey = KeyCode.Escape;
+    public KeyCode jumpKey = KeyCode.Space;
+    public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode interactKey = KeyCode.F;
+    public KeyCode attack = KeyCode.Mouse0;
+    public KeyCode pauseKey = KeyCode.Escape;
     public KeyCode switchWeapon = KeyCode.LeftControl;
 
     private AudioSource audioSource;
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour {
             if(tory.Stamina < 500)
                 tory.AdjustStamina(0.25f);
         }
-        if(Input.GetKeyDown(attack) && tory.Stamina > 10)
+        if((tory.MeleeWeapon != null || tory.RangedWeapon != null) && Input.GetKeyDown(attack) && tory.Stamina > 10)
         {
             tory.AdjustStamina(-10);
         }
@@ -124,9 +124,12 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(jumpKey) && tory.IsGrounded)
         {
 			tory.GroundCheck();
-			tory.Jump();
-			audioSource.clip = jumpSound;
-			audioSource.Play ();
+            if (tory.Stamina > 51 && Time.timeScale > 0)
+            {
+                tory.Jump();
+                audioSource.clip = jumpSound;
+                audioSource.Play();
+            }
         }
         
         if (Input.GetKeyDown(sprintKey))
@@ -164,16 +167,16 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(attack))
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-			if (tory.CurrentAttackType == "ranged") {
+            if (tory.CurrentAttackType == "ranged") {
 				tory.Attack (gunshotSound);
 			} 
 			else {
 				tory.Attack (knifeSwipe);
 			}
         }
-        if (Input.GetKeyDown(interactKey))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             Destroy(tory.Interact(pickupSound));
         }
@@ -253,16 +256,4 @@ public class PlayerController : MonoBehaviour {
     }
     #endregion
 
-    //Did you just add bool b so you could you the same method name? This is bad overloading. What does this do?
-    //public bool MeleeAnimationDelay(bool b)
-    //{
-    //    tory.SetAnimationFalse();
-    //    return false;
-    //}
-
-    //public void MeleeAnimationDelay()
-    //{
-    //    attackCooldown = attackDelay;
-    //    animationDelay = true;
-    //}
 }
