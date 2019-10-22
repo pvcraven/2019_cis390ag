@@ -36,8 +36,7 @@ public class ZombieSpawner : MonoBehaviour {
             if (zombieNumber == 0 || zombieNumber == 2 || zombieNumber == 4)
             {
                 GameObject zombie = UnityEngine.Object.Instantiate(zombiePrefab[zombieNumber], zombieSpawner.position, Quaternion.identity);
-
-                UnityEngine.Object.Destroy(zombie, 30.0f);
+                UnityEngine.Object.Destroy(zombie, 15.0f);
             }
             else if (zombieNumber == 3 || zombieNumber == 1)
             {

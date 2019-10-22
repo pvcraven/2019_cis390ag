@@ -127,7 +127,6 @@ public class PlayerController : MonoBehaviour {
             if (tory.Stamina > 51 && Time.timeScale > 0)
             {
                 tory.Jump();
-                Debug.Log(tory.Stamina);
                 audioSource.clip = jumpSound;
                 audioSource.Play();
             }
