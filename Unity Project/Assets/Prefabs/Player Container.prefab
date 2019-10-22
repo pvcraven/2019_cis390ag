@@ -386,8 +386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpKey: 32
   sprintKey: 304
-  attack: 323
   interactKey: 114
+  attack: 323
   pauseKey: 27
   switchWeapon: 306
   player: {fileID: 1270749830176946}
@@ -425,6 +425,8 @@ MonoBehaviour:
   settingsMenu: {fileID: 0}
   keyBindingsMenu: {fileID: 0}
   player: {fileID: 0}
+  videoSettingsMenu: {fileID: 0}
+  soundSettingsMenu: {fileID: 0}
 --- !u!70 &70910004324860084
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -580,8 +582,8 @@ MonoBehaviour:
   statusBarGameObject: {fileID: 1339919976171178}
   healthPanel: {fileID: 224971945857617196}
   stausPanel: {fileID: 224021473782188728}
-  gunStatus: {fileID: 1120401411631848}
-  knifeStatus: {fileID: 1990186507149080}
+  gunPanel: {fileID: 1120401411631848}
+  knifePanel: {fileID: 1990186507149080}
 --- !u!114 &114295396864572206
 MonoBehaviour:
   m_ObjectHideFlags: 0
