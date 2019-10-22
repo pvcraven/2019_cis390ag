@@ -37,7 +37,6 @@ public class StatusBarLogic : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Screen: " + Screen.width);
         healthPanelMin = healthPanel.GetComponent<RectTransform>().anchorMin.x;
         initialHealthPanelMax = healthPanel.GetComponent<RectTransform>().anchorMax.x;
         currentHealthPanelMax = initialHealthPanelMax;
@@ -56,7 +55,6 @@ public class StatusBarLogic : MonoBehaviour
 
     public void SetHealth()
     {
-        // Debug.Log("Setting Health");
         statusBarInformation.TryGetValue("Health", out statusBarHealth);
 
         int.TryParse(statusBarHealth, out health);
