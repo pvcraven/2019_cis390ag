@@ -37,7 +37,6 @@ public class InventoryController : MonoBehaviour
         {
             if (Time.timeScale > 0 && !inventoryIsOpen)
             {
-                Debug.Log("Open");
                 audiosource.clip = audioclips[0];
                 audiosource.Play();
                 inventoryPanel.SetActive(true);
@@ -83,7 +82,6 @@ public class InventoryController : MonoBehaviour
             {
                 if (inventoryItems[i].tag == "Water")
                 {
-                    Debug.Log("WATER");
                     player.tory.ConsumeEdibleItem();
                     waterAudioSource.Play();
                     RemoveItem(i);
@@ -136,7 +134,6 @@ public class InventoryController : MonoBehaviour
 
     private void RemoveItem(int position)
     {
-        Debug.Log("Item Removed");
         var currentSlot = inventorySlots[position].GetComponent<Image>();
         inventoryItems[position] = null;
         currentSlot.sprite = null;

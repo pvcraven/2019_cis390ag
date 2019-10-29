@@ -45,7 +45,9 @@ public class MainMenuController : MonoBehaviour
 		// Closes Unity game if it's a full application
 		Application.Quit();
         // Close Unity game if it's in a Unity Editor
+#if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
+#endif
     }
 	
 	public void LoadLevel1()
